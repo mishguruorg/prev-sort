@@ -1,0 +1,47 @@
+{
+  "name": "prevSort",
+  "version": "1.0.0",
+  "description": "Sort an array based on each item having a 'previousId'",
+  "main": "dist/index.js",
+  "repository": "https://github.com/mishguruorg/sort-by-previous",
+  "author": "George Czabania <george@mish.guru>",
+  "license": "MIT",
+  "scripts": {
+    "build": "pkg-build",
+    "coverage": "NODE_ENV=test_local pkg-coverage",
+    "flow": "pkg-flow",
+    "lint": "pkg-lint",
+    "prepublish": "pkg-build",
+    "test": "NODE_ENV=test_local pkg-test"
+  },
+  "babel": {
+    "presets": [
+      "flow",
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "transform-object-rest-spread",
+        {
+          "useBuiltIns": true
+        }
+      ]
+    ]
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "dependencies": {
+    "@mishguru/package": "^1.8.6"
+  }
+}
