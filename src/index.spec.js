@@ -4,30 +4,30 @@ import prevSort from './index'
 
 test('should be able to sort anything', (t) => {
   const input = [
-    { name: 'george', friend: 'jacob' },
-    { name: 'jacob', friend: 'ivan' },
-    { name: 'ivan', friend: 'cj' },
-    { name: 'cj', friend: 'ashok' },
-    { name: 'ashok', friend: 'lucy-jane' },
-    { name: 'lucy-jane', friend: 'brendon' },
-    { name: 'bredon', friend: 'mo' },
-    { name: 'mo', friend: null }
+    { name: 'alpha', after: null },
+    { name: 'hotel', after: 'golf' },
+    { name: 'foxtrot', after: 'echo' },
+    { name: 'delta', after: 'charlie' },
+    { name: 'bravo', after: 'alpha' },
+    { name: 'charlie', after: 'bravo' },
+    { name: 'golf', after: 'foxtrot' },
+    { name: 'echo', after: 'delta' }
   ]
 
   const output = prevSort(input, {
     getId: (item) => item.name,
-    getPreviousId: (item) => item.friend
+    getPreviousId: (item) => item.after
   })
 
   const expected = [
-    { name: 'mo', friend: null },
-    { name: 'bredon', friend: 'mo' },
-    { name: 'lucy-jane', friend: 'brendon' },
-    { name: 'ashok', friend: 'lucy-jane' },
-    { name: 'cj', friend: 'ashok' },
-    { name: 'ivan', friend: 'cj' },
-    { name: 'jacob', friend: 'ivan' },
-    { name: 'george', friend: 'jacob' }
+    { name: 'alpha', after: null },
+    { name: 'bravo', after: 'alpha' },
+    { name: 'charlie', after: 'bravo' },
+    { name: 'delta', after: 'charlie' },
+    { name: 'echo', after: 'delta' },
+    { name: 'foxtrot', after: 'echo' },
+    { name: 'golf', after: 'foxtrot' },
+    { name: 'hotel', after: 'golf' }
   ]
 
   t.deepEqual(output, expected)
