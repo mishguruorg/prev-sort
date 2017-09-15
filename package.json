@@ -1,7 +1,7 @@
 {
   "name": "prev-sort",
   "version": "1.0.0",
-  "description": "Sort an array based on each item having a 'previousId'",
+  "description": "Sort an array based on each item knowing the item before it",
   "main": "dist/index.js",
   "repository": "https://github.com/mishguruorg/prev-sort",
   "author": "George Czabania <george@mish.guru>",

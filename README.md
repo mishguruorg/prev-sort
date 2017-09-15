@@ -1,5 +1,7 @@
 # Prev Sort
 
+> Sort a collection based on each item knowing the item before it
+
 ## Installation
 
 ```shell
