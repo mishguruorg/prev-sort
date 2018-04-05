@@ -42,6 +42,6 @@
     "babel": "inherit"
   },
   "dependencies": {
-    "@mishguru/package": "^1.8.6"
+    "@mishguru/package": "^2.2.2"
   }
 }
