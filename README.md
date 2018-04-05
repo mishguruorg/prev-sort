@@ -1,5 +1,7 @@
 # Prev Sort
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mishguruorg/prev-sort.svg)](https://greenkeeper.io/)
+
 > Sort a collection based on each item knowing the item before it
 
 ## Installation
