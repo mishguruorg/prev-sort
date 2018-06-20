@@ -14,34 +14,7 @@
     "prepublish": "pkg-build",
     "test": "NODE_ENV=test_local pkg-test"
   },
-  "babel": {
-    "presets": [
-      "flow",
-      [
-        "env",
-        {
-          "targets": {
-            "node": "current"
-          }
-        }
-      ]
-    ],
-    "plugins": [
-      [
-        "transform-object-rest-spread",
-        {
-          "useBuiltIns": true
-        }
-      ]
-    ]
-  },
-  "ava": {
-    "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
-  },
   "dependencies": {
-    "@mishguru/package": "^1.8.6"
+    "@mishguru/package": "^4.1.0"
   }
 }
