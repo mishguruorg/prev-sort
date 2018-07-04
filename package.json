@@ -15,6 +15,6 @@
     "test": "NODE_ENV=test_local pkg-test"
   },
   "dependencies": {
-    "@mishguru/package": "^4.1.0"
+    "@mishguru/package": "^4.3.1"
   }
 }
