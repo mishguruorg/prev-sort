@@ -3,10 +3,11 @@ import sortChains from './sortChains'
 import linkChain from './linkChain'
 
 import { difference, clone, flatten } from './utils'
+import { Item } from './types'
 
-const sortItems = (input) => {
+const sortItems = <T>(input: Item<T>[]): Item<T>[] => {
   let items = clone(input)
-  let chains = []
+  let chains: Item<T>[][] = []
 
   while (items.length > 0) {
     const chain = createChain(items)

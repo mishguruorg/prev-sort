@@ -1,6 +1,7 @@
 import { first, last } from './utils'
+import { Item } from './types'
 
-const sortChains = (chains) => {
+const sortChains = <T>(chains: Item<T>[][]): Item<T>[][] => {
   return chains.sort((a, b) => {
     if (first(a).id > last(b).id) {
       return 1

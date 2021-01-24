@@ -1,6 +1,7 @@
 import { concat, first, last } from './utils'
+import { Item } from './types'
 
-const linkChain = (chain, chains) => {
+const linkChain = <T>(chain: Item<T>[], chains: Item<T>[][]): Item<T>[][] => {
   const firstItem = first(chain)
   let match = false
 

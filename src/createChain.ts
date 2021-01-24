@@ -1,6 +1,7 @@
 import { clone, removeIndex } from './utils'
+import { Item } from './types'
 
-const createChain = (input) => {
+const createChain = <T>(input: Item<T>[]): Item<T>[] => {
   let items = clone(input)
 
   let item = items.shift()

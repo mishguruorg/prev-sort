@@ -2,19 +2,19 @@
   "name": "prev-sort",
   "version": "1.3.0",
   "description": "Sort an array based on each item knowing the item before it",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "repository": "https://github.com/mishguruorg/prev-sort",
   "author": "George Czabania <george@mish.guru>",
   "license": "MIT",
   "scripts": {
+    "clean": "pkg-clean",
     "build": "pkg-build",
-    "coverage": "NODE_ENV=test_local pkg-coverage",
-    "flow": "pkg-flow",
     "lint": "pkg-lint",
-    "prepublish": "pkg-build",
-    "test": "NODE_ENV=test_local pkg-test"
+    "tidy": "pkg-tidy",
+    "test": "NODE_ENV=test pkg-test"
   },
   "devDependencies": {
-    "@mishguru/package": "^6.0.0-next.30"
+    "@mishguru/package": "^9.6.0"
   }
 }

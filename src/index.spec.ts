@@ -11,12 +11,12 @@ test('should be able to sort anything', (t) => {
     { name: 'bravo', after: 'alpha' },
     { name: 'charlie', after: 'bravo' },
     { name: 'golf', after: 'foxtrot' },
-    { name: 'echo', after: 'delta' }
+    { name: 'echo', after: 'delta' },
   ]
 
   const output = prevSort(input, {
     getId: (item) => item.name,
-    getPreviousId: (item) => item.after
+    getPreviousId: (item) => item.after,
   })
 
   const expected = [
@@ -27,7 +27,7 @@ test('should be able to sort anything', (t) => {
     { name: 'echo', after: 'delta' },
     { name: 'foxtrot', after: 'echo' },
     { name: 'golf', after: 'foxtrot' },
-    { name: 'hotel', after: 'golf' }
+    { name: 'hotel', after: 'golf' },
   ]
 
   t.deepEqual(output, expected)
