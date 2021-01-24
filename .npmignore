@@ -1,0 +1,4 @@
+/dist/*.js.map
+/dist/*.spec.js
+/dist/tsconfig.tsbuildinfo
+/src/*
