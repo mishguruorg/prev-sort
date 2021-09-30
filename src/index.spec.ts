@@ -179,9 +179,9 @@ test("should order sublists by root id", (t) => {
 });
 
 test("should be able to sort any valid input (large random datasets | many chains | many iterations)", (t) => {
-  const chainSize = 5;
-  const numChains = 5;
-  const reps = 1;
+  const chainSize = 50;
+  const numChains = 20;
+  const reps = 100;
 
   const numItems = chainSize * numChains;
 
