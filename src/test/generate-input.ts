@@ -1,38 +1,51 @@
-import _ from "lodash";
-import randomstring from "randomstring";
-import collectSet from "./collect-set";
+import randomstring from 'randomstring'
 
-export const generateUniqueStrings = (n: number, opts: randomstring.GenerateOptions = {}): string[] => {
+export const generateUniqueStrings = (
+  n: number,
+  opts: randomstring.GenerateOptions = {},
+): string[] => {
+  const gen = () => randomstring.generate(opts)
 
-  const gen = () => randomstring.generate(opts);
-
-  return generateUniqueItems(gen, n);
+  return generateUniqueItems(gen, n)
 }
 
-export const generateUniqueItems = <T, >(gen: () => T, n: number): T[] => {
-  const items = new Set<T>();
+export const generateUniqueItems = <T>(gen: () => T, n: number): T[] => {
+  const items = new Set<T>()
 
   while (items.size < n) {
-    items.add(gen());
+    items.add(gen())
   }
 
-  return collectSet(items);
+  return collectSet(items)
 }
 
-export const sortChainsByRootIdInplace = <T, >(chains: T[][], getId: (item: T) => unknown): T[][] => {
+export const sortChainsByRootIdInplace = <T>(
+  chains: T[][],
+  getId: (item: T) => unknown,
+): T[][] => {
+  chains.sort((a, b) => {
+    const idA: any = getId(a[0])
+    const idB: any = getId(b[0])
 
-  chains.sort(
-    (a, b) => {
-      
-    const idA: any = getId(a[0]);
-    const idB: any = getId(b[0]);
+    return idA < idB ? -1 : idA > idB ? 1 : 0
+  })
 
-    return idA < idB
-      ? -1
-      : idA > idB
-        ? 1
-        : 0;
-    });
+  return chains
+}
 
-  return chains;
+const collectSet = <T>(items: Set<T>): T[] => {
+  const result: T[] = []
+
+  iterForEach(([item, _]) => result.push(item), items.entries())
+
+  return result
+}
+
+const iterForEach = <T>(
+  f: (item: T) => void,
+  iter: IterableIterator<T>,
+): void => {
+  for (let item = iter.next(); !item.done; item = iter.next()) {
+    f(item.value)
+  }
 }
