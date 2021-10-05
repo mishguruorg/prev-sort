@@ -1,5 +1,6 @@
 import test from 'ava'
 import _ from 'lodash'
+import R from 'ramda'
 
 import prevSort from './index'
 import {
@@ -197,7 +198,7 @@ test('should be able to sort any valid input (large random datasets | many chain
 
     sortChainsByRootIdInplace(chains, (item) => item.id)
 
-    const expected = _.flatten(chains)
+    const expected = R.flatten(chains)
 
     const input = _.shuffle(expected)
 
